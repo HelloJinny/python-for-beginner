@@ -1,3 +1,13 @@
+print("    *    ")
+print("   ***   ")
+print("  *****  ")
+print(" ******* ")
+print("*********")
+print(" ******* ")
+print("   ***   ")
+print("    *    ")
+
+## Self Study 3-1 ##
 print("*********")
 print(" ******* ")
 print("  *****  ")

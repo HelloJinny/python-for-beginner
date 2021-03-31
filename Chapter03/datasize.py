@@ -1,7 +1,8 @@
 import sys
 
 ## 변수 선언 부분 ##
-intVar, floatVar, boolVar, strVar, listVar, tupleVar, dictVar, setVar = [None] * 8
+intVar, floatVar, boolVar, strVar, listVar, tupleVar, dictVar, setVar = [
+    None] * 8
 
 ## 메인 코드 부분 ##
 if __name__ == "__main__":
@@ -14,6 +15,7 @@ if __name__ == "__main__":
     dictVar = {}
     setVar = set()
 
+    # 데이터 크기 확인하는 sys.getsizeof() 함수
     print('int형 기본 크기 -->', sys.getsizeof(intVar))
     print('float형 기본 크기 -->', sys.getsizeof(floatVar))
     print('bool형 기본 크기 -->', sys.getsizeof(boolVar))
