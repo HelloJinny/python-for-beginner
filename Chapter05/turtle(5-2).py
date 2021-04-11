@@ -28,6 +28,10 @@ if __name__ == "__main__":
     t2.goto(0, 0)
     t3.goto(100, 100)
 
+    t1.speed(10)
+    t2.speed(10)
+    t3.speed(10)
+
     while True:
         angle = random.randrange(0, 300)
         dist = random.randrange(1, 50)
@@ -54,10 +58,10 @@ if __name__ == "__main__":
 
         if math.sqrt(((t1X - t2X) * (t1X - t2X)) + ((t1Y - t2Y) * (t1Y - t2Y))) <= 20 or \
                 math.sqrt(((t1X - t3X) * (t1X - t3X)) + ((t1Y - t3Y) * (t1Y - t3Y))) <= 20 or \
-                math.sqrt(((t2X - t3X) * (t2X - t3X)) + ((t2Y - t3Y) * (t2Y - t3Y))) <= 20:
+                math.sqrt(((t2X - t3X) * (t2X - t3X)) + ((t2Y - t3Y) * (t2Y - t3Y))) <= 20:  # 거북이 거리가 20 미만이면 만난 것으로 처리
             t1.turtlesize(3)
             t2.turtlesize(3)
-            t3.tyetlesize(3)
+            t3.turtlesize(3)
             break
 
 turtle.done()
