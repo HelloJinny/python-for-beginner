@@ -4,7 +4,7 @@ from time import *
 ## 전역  변수 선언 부분 ##
 fnameList = ["jeju1.gif", "jeju2.gif", "jeju3.gif", "jeju4.gif",
              "jeju5.gif", "jeju6.gif", "jeju7.gif", "jeju8.gif", "jeju9.gif"]  # 사진 9장의 파일명을 저장
-photoList = [None] *  # PhotoImage() 함수로 생성할 변수 9개 준비
+photoList = [None] * 9  # PhotoImage() 함수로 생성할 변수 9개 준비
 num = 0  # 현재 사진의 번호
 
 ## 함수 선언 부분 ##

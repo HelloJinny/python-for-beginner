@@ -1,8 +1,12 @@
-num = int(input('시프트할 숫자는? : '))
+inValue = int(input('시프트할 숫자는? : '))
 count = int(input('출력할 횟수는? : '))
+result = 0
+i = 0
 
 for i in range(1, count + 1):
-    print("%d << %d = %d" % (num, i, num << i))
+    result = inValue << i
+    print("%d << %d = %d" % (inValue, i, result))
 
 for i in range(1, count + 1):
-    print("%d >> %d = %d" % (num, i, num >> i))
+    result = inValue >> i
+    print("%d >> %d = %d" % (inValue, i, result))
