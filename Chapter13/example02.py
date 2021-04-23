@@ -7,15 +7,22 @@ import sqlite3
 def loadImage(fname):  # raw --> DB
     global inImage, XSIZE, YSIZE
     con, cur = None, None
-    row, col, data, sql = 0, 0, 0, ''
+    row, col, data, sql = 0, 0, 0, ""
     con = sqlite3.connect("rawDB")  # DB가 저장된 폴더까지 지정
     cur = con.cursor()
-    fp = open(fname, 'rb')
+    fp = open(fname, "rb")
     for row in range(0, XSIZE):
         for col in range(0, YSIZE):
             data = int(ord(fp.read(1)))
-            sql = "INSERT INTO rawTable VALUES(" + str(row) + \
-                "," + str(col) + "," + str(data) + ")"
+            sql = (
+                "INSERT INTO rawTable VALUES("
+                + str(row)
+                + ","
+                + str(col)
+                + ","
+                + str(data)
+                + ")"
+            )
             cur.execute(sql)
 
     fp.close()
@@ -40,7 +47,7 @@ def loadDatabase():  # DB --> 메모리
         inImage.append(tmpList)
 
     # 테이블 --> inImage
-    while (True):
+    while True:
         record = cur.fetchone()
         if record == None:
             break
@@ -74,7 +81,7 @@ if __name__ == "__main__":
     window.title("RAW-->DB")
     canvas = Canvas(window, height=XSIZE, width=YSIZE)
     paper = PhotoImage(width=XSIZE, height=YSIZE)
-    canvas.create_image((XSIZE/2, YSIZE/2), image=paper, state="normal")
+    canvas.create_image((XSIZE / 2, YSIZE / 2), image=paper, state="normal")
 
     # 테이블 초기화
     con = sqlite3.connect("rawDB")  # 소스코드가 저장된 폴더에 생성됨
@@ -84,7 +91,7 @@ if __name__ == "__main__":
     con.commit()
     con.close()
 
-    filename = 'RAW/tree.raw'  # RAW/tree.raw
+    filename = "RAW/tree.raw"  # RAW/tree.raw
     loadImage(filename)  # 파일 --> 데이터베이스
     loadDatabase()  # 데이터베이스 --> 메모리
     displayImage(inImage)  # 메모리 --> 화면
